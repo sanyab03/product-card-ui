@@ -1,58 +1,65 @@
-
-
- <!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Card</title>
+    <title> Product Card </title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-</head>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
 <body>
-    <div class="container">
-        <div class="box one">
-            <div class="details">
-                <div class="topic">Description</div>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate reiciendis modi debitis neque ad consequuntur sunt similique eos necessitatibus delectus hic iste fugit quis molestiae natus, culpa expedita ab esse?
-                </p>
-                <div class="rating">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="price-box">
-                    <div class="discount">$1800.00</div>
-                    <div class="price">$1500.00</div>
-                </div>
-                <div class="button1">
-                    <button>Add To Cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="box two">
-            <div class="image-box">
-                <div class="image">
-                    <img src="camera.png" alt="Camera Image">
-                </div>
-                <div class="info">
-                    <div class="brand">SONY</div>
-                    <div class="name">SONY ALPHA A7 KIT</div>
-                    <div class="shipping">FREE SHIPPING</div>
-                    <div class="button2">
-                        <button>Login For More</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="product-card">
+    <div class="logo-cart">
+      <img src="images/logo-adidas.png" alt="logo">
+      <i class='bx bx-shopping-bag'></i>
     </div>
+    <div class="main-images">
+      <img id="blue" class="blue active" src="images/blue.png" alt="blue">
+      <img id="pink" class="pink" src="images/pink.png" alt="blue">
+      <img id="green" class="green" src="images/green.png" alt="blue">
+    </div>
+    <div class="shoe-details">
+      <span class="shoe_name">ADDIDAS GAZE ZX</span>
+      <p>Lorem ipsum dolor sit lorenm i amet, consectetur adipisicing elit. Eum, ea, ducimus!</p>
+      <div class="stars">
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bxs-star' ></i>
+        <i class='bx bx-star' ></i>
+      </div>
+    </div>
+    <div class="color-price">
+      <div class="color-option">
+        <span class="color">Colour:</span>
+        <div class="circles">
+          <span class="circle blue active"  id="blue"></span>
+          <span class="circle pink " id="pink"></span>
+          <span class="circle green " id="green"></span>
+        </div>
+      </div>
+      <div class="price">
+        <span class="price_num">&#8377;09.00</span>
+        <span class="price_letter">Nine Rupees only</span>
+      </div>
+    </div>
+    <div class="button">
+      <div class="button-layer"></div>
+      <button>Add To Cart</button>
+    </div>
+  </div>
+  <script>
+   let circle = document.querySelector(".color-option");
+
+   circle.addEventListener("click", (e)=>{
+     let target = e.target;
+     if(target.classList.contains("circle")){
+       circle.querySelector(".active").classList.remove("active");
+       target.classList.add("active");
+       document.querySelector(".main-images .active").classList.remove("active");
+       document.querySelector(`.main-images .${target.id}`).classList.add("active");
+     }
+   });
+  </script>
 </body>
 </html>
